@@ -27,4 +27,5 @@ src/*.ts
 src/*.tsx
 src/index.tsx
 
-
+public/images
+public/instructions.css

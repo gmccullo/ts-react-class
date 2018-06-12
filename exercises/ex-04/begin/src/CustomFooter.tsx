@@ -1,6 +1,18 @@
-import React from 'react';
+import * as React from 'react';
 
-const CustomFooter = ( props ) => {
+interface Company {
+  name: string;
+  address: string;
+  city: string;
+  state: string;
+  zip: string;
+}
+
+interface CustomFooterProps {
+  company: Company
+}
+
+const CustomFooter = ( props: CustomFooterProps ) => {
   return (
     <div className="footer">
       <hr/>

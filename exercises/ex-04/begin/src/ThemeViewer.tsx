@@ -1,6 +1,6 @@
-import React from 'react';
+import * as React from 'react';
 
-const ThemeViewer = ( props ) => {
+const ThemeViewer = () => {
   return (
     <div>
       <h2>Theme viewer</h2>

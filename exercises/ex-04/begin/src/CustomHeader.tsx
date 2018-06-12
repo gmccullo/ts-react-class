@@ -1,6 +1,10 @@
-import React from 'react';
+import * as React from 'react';
 
-const CustomHeader = ( props ) => {
+interface CustomHeaderProps {
+  today: string;
+}
+
+const CustomHeader = ( props: CustomHeaderProps ) => {
   return (
     <header className="page-header">
       <h1>Super-Fake Banking Services</h1>

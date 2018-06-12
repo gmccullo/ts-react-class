@@ -20,7 +20,7 @@ let exercises = 'exercises/',
   notData = '!' + src + 'data/**/*',
   allFiles = '**/*';
 
-let options = minimist( process.argv.slice( 2 ) );
+let options = minimist( process.argv.slice( 2 ), {string: ['src']} );
 
 // TODO: Write a backup-files target/task
 
@@ -35,7 +35,6 @@ gulp.task( 'start-exercise', [ 'clean-all' ], function() {
     gulp.src( baseDir + images + imageFiles )
       .pipe( gulp.dest( publicFolder + images ) );
 
-    console.log( 'Testing ' + baseDir + options.src + instructions );
     if ( fs.existsSync( baseDir + options.src + instructions ) ) {
       console.log( 'Building instructions....' );
       gulp.src( baseDir + options.src + instructions )
@@ -54,7 +53,7 @@ gulp.task( 'start-exercise', [ 'clean-all' ], function() {
         process.exit( 0 );
       }, 2000 );
     } else {
-      console.warn('Could not find ' + baseDir + options.src + instructions );
+      console.warn('No instructions found at ' + baseDir + options.src + instructions );
     }
 
   }

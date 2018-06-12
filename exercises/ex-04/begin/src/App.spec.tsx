@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import App from './App';
 import {shallow} from 'enzyme';
 
@@ -12,7 +12,7 @@ test( 'Adds 2 and 2 to equal 4', () => {
   expect( 2 + 2 ).toBe( 4 );
 } );
 
-test('Contains "Hello"', () => {
+test('Contains "Good"', () => {
   const wrapper = shallow(<App/>);
-  expect(wrapper.text()).toMatch(/Hello/);
+  expect(wrapper.text()).toMatch(/Good/);
 });

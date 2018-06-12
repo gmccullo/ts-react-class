@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import PayeeRow from './PayeeRow';
 import {setSortField, setPayee} from './payee-actions';
 import _sortBy from 'lodash/sortBy';

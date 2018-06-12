@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import CustomHeader from './CustomHeader';
 import CustomFooter from './CustomFooter';
 
@@ -10,6 +10,7 @@ const App = () => {
     state  : 'NJ',
     zip    : '07027'
   };
+
   return (
     <section>
       <CustomHeader today="Monday"/>

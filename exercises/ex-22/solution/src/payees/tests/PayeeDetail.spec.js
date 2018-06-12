@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import {shallow} from 'enzyme';
 import {payeesDAO} from '../../data/class-data';
 import PayeeDetail from '../PayeeDetail';
