@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const LoggedIn = ( props ) => {
+const LoggedIn = () => {
   return (
     <div className="alert alert-success">
       You are logged in.

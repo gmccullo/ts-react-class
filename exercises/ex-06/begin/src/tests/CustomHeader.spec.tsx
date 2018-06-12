@@ -1,7 +1,7 @@
 import * as React from 'react';
-import renderer from 'react-test-renderer';
+import * as renderer from 'react-test-renderer';
 
-import CustomHeader from '../CustomHeader.js';
+import CustomHeader from '../CustomHeader';
 
 it( 'checks out against a snapshot', () => {
   const tree = renderer.create(
