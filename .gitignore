@@ -29,3 +29,6 @@ src/index.tsx
 
 public/images
 public/instructions.css
+
+__snapshots__
+src/tests

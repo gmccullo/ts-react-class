@@ -1,18 +1,25 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import App from './App';
-import {shallow} from 'enzyme';
+import { shallow } from 'enzyme';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-});
+import * as Enzyme from 'enzyme';
+import * as Adapter from 'enzyme-adapter-react-16';
 
-test( 'Adds 2 and 2 to equal 4', () => {
-  expect( 2 + 2 ).toBe( 4 );
+Enzyme.configure( { adapter: new Adapter() } );
+
+it( 'renders without crashing', () => {
+  const div = document.createElement( 'div' );
+  ReactDOM.render( <App/>, div );
 } );
 
-test('Contains "Hello"', () => {
-  const wrapper = shallow(<App/>);
-  expect(wrapper.text()).toMatch(/Hello/);
-});
+test( 'Adds 2 and 2 to equal 4', () => {
+  expect( 2 + 2 )
+    .toBe( 4 );
+} );
+
+test( 'Contains "Hello"', () => {
+  const wrapper = shallow( <App/> );
+  expect( wrapper.text() )
+    .toMatch( /Hello/ );
+} );

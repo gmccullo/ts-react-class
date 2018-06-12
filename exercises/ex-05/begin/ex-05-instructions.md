@@ -6,12 +6,12 @@
 
 ### Create a test spec for CustomHeader that uses snapshots
 Open `src/tests/CustomHeader.spec.js`. Add code to generate a snapshot 
-from a standard rendering of `<CustomHeader`. Remember that `<CustomHeader>` is
+from a standard rendering of `<CustomHeader>`. Remember that `<CustomHeader>` is
 intended to wrap around and render content.
 
 ### Create a test spec for CustomFooter that uses snapshots
 Open `src/tests/CustomFooter.spec.js`. Add code to generate a snapshot 
-from a standard rendering of `<CustomFooter`. Remember that `<CustomFooter>` 
+from a standard rendering of `<CustomFooter>`. Remember that `<CustomFooter>` 
 should receive a `company` object. You will have to mock one out.
 
 Run `npm test` to generate snapshots. Leave it running for the next section.

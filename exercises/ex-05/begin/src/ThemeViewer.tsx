@@ -1,6 +1,10 @@
 import * as React from 'react';
 
-const ThemeViewer = ( props ) => {
+interface Props {
+  theme: string;
+}
+
+const ThemeViewer = ( props: Props ) => {
   let buttonClasses, labelClasses;
   if (props.theme === 'ocean') {
     buttonClasses = 'btn btn-info';

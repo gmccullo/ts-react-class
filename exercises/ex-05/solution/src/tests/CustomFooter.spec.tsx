@@ -1,7 +1,7 @@
 import * as React from 'react';
-import renderer from 'react-test-renderer';
+import * as renderer from 'react-test-renderer';
 
-import CustomFooter from '../CustomFooter.js';
+import CustomFooter from '../CustomFooter';
 
 it( 'checks out against a snapshot', () => {
   let company = {
