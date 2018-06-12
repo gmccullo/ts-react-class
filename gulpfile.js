@@ -36,12 +36,13 @@ gulp.task( 'start-exercise', [ 'clean-all' ], function() {
       .pipe( gulp.dest( publicFolder + images ) );
 
     if ( fs.existsSync( baseDir + options.src + instructions ) ) {
-      console.log( 'Building instructions....' );
+      console.log( 'Building instructions....', baseDir + options.src + instructions );
+      del([publicFolder + instructionsOut]);
       gulp.src( baseDir + options.src + instructions )
-        .pipe( markdown() )
-        .pipe( wrap( { src: exercises + 'instructions-template.html' } ) )
-        .pipe( concat( instructionsOut ) )
-        .pipe( gulp.dest( publicFolder ) );
+          .pipe( markdown() )
+          .pipe( wrap( { src: exercises + 'instructions-template.html' } ) )
+          .pipe( concat( instructionsOut ) )
+          .pipe( gulp.dest( publicFolder ) );
 
       gulp.src( exercises + 'instructions.css' )
         .pipe( gulp.dest( publicFolder ) );
