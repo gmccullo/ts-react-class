@@ -4,9 +4,12 @@ import './css/local.css';
 
 import {payeesDAO} from './data/class-data';
 import PayeeDetail from './payees/PayeeDetail';
+import Payee from './data/Payee';
 
 export default class App extends React.Component {
-  constructor(props) {
+  payee: Payee;
+
+  constructor(props: any) {
     super(props);
 
     this.payee = payeesDAO.get( 23 );

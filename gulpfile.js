@@ -1,26 +1,27 @@
-let gulp = require( 'gulp' ),
-  markdown = require( 'gulp-markdown' ),
-  concat = require( 'gulp-concat' ),
-  wrap = require( 'gulp-wrap' ),
-  del = require( 'del' ),
-  opn = require( 'opn' ),
-  fs = require( 'fs' ),
-  minimist = require( 'minimist' );
+let gulp     = require( 'gulp' ),
+    markdown = require( 'gulp-markdown' ),
+    concat   = require( 'gulp-concat' ),
+    wrap     = require( 'gulp-wrap' ),
+    debug    = require( 'gulp-debug' ),
+    del      = require( 'del' ),
+    opn      = require( 'opn' ),
+    fs       = require( 'fs' ),
+    minimist = require( 'minimist' );
 
-let exercises = 'exercises/',
-  begin = '/begin/',
-  solution = '/solution/',
-  src = 'src/',
-  publicFolder = 'public/',
-  instructions = '-instructions.md',
-  instructionsOut = 'instructions.html',
-  images = 'images/',
-  imageFiles = '**/*.+(png|jpg|gif)',
-  files = '**/*.+(js|ts|tsx|html)',
-  notData = '!' + src + 'data/**/*',
-  allFiles = '**/*';
+let exercises       = 'exercises/',
+    begin           = '/begin/',
+    solution        = '/solution/',
+    src             = 'src/',
+    publicFolder    = 'public/',
+    instructions    = '-instructions.md',
+    instructionsOut = `instructions-${Date.now()}.html`,
+    images          = 'images/',
+    imageFiles      = '**/*.+(png|jpg|gif)',
+    files           = '**/*.+(js|ts|tsx|html)',
+    notData         = '!' + src + 'data/**/*',
+    allFiles        = '**/*';
 
-let options = minimist( process.argv.slice( 2 ), {string: ['src']} );
+let options = minimist( process.argv.slice( 2 ), { string: [ 'src' ] } );
 
 // TODO: Write a backup-files target/task
 
@@ -28,16 +29,15 @@ gulp.task( 'start-exercise', [ 'clean-all' ], function() {
   if ( options.src ) {
     const baseDir = exercises + options.src + begin;
     gulp.src( baseDir + src + files )
-      .pipe( gulp.dest( src ) );
+        .pipe( gulp.dest( src ) );
     gulp.src( baseDir + publicFolder + files )
-      .pipe( gulp.dest( publicFolder ) );
+        .pipe( gulp.dest( publicFolder ) );
 
     gulp.src( baseDir + images + imageFiles )
-      .pipe( gulp.dest( publicFolder + images ) );
+        .pipe( gulp.dest( publicFolder + images ) );
 
     if ( fs.existsSync( baseDir + options.src + instructions ) ) {
       console.log( 'Building instructions....', baseDir + options.src + instructions );
-      del([publicFolder + instructionsOut]);
       gulp.src( baseDir + options.src + instructions )
           .pipe( markdown() )
           .pipe( wrap( { src: exercises + 'instructions-template.html' } ) )
@@ -45,7 +45,7 @@ gulp.task( 'start-exercise', [ 'clean-all' ], function() {
           .pipe( gulp.dest( publicFolder ) );
 
       gulp.src( exercises + 'instructions.css' )
-        .pipe( gulp.dest( publicFolder ) );
+          .pipe( gulp.dest( publicFolder ) );
 
       opn( 'http://localhost:3000/' + instructionsOut );
 
@@ -54,7 +54,7 @@ gulp.task( 'start-exercise', [ 'clean-all' ], function() {
         process.exit( 0 );
       }, 2000 );
     } else {
-      console.warn('No instructions found at ' + baseDir + options.src + instructions );
+      console.warn( 'No instructions found at ' + baseDir + options.src + instructions );
     }
 
   }
@@ -63,18 +63,18 @@ gulp.task( 'start-exercise', [ 'clean-all' ], function() {
 gulp.task( 'show-solution', [ 'clean-all' ], function() {
   if ( options.src ) {
     gulp.src( exercises + options.src + solution + src + files )
-      .pipe( gulp.dest( src ) );
+        .pipe( gulp.dest( src ) );
     gulp.src( exercises + options.src + solution + publicFolder + files )
-      .pipe( gulp.dest( publicFolder ) );
+        .pipe( gulp.dest( publicFolder ) );
   }
 } );
 
 gulp.task( 'copy-to-begin', [ 'clean-begin' ], () => {
   if ( options.dest ) {
     gulp.src( [ src + files, notData ] )
-      .pipe( gulp.dest( exercises + options.dest + begin + src ) );
+        .pipe( gulp.dest( exercises + options.dest + begin + src ) );
     gulp.src( publicFolder + files )
-      .pipe( gulp.dest( exercises + options.dest + begin + publicFolder ) );
+        .pipe( gulp.dest( exercises + options.dest + begin + publicFolder ) );
   }
 } );
 
@@ -82,20 +82,22 @@ gulp.task( 'copy-to-solution', [ 'clean-solution' ], () => {
   if ( options.dest ) {
     // TODO: Make sure that the data folder is not included
     gulp.src( [ src + files, notData ] )
-      .pipe( gulp.dest( exercises + options.dest + solution + src ) );
+        .pipe( gulp.dest( exercises + options.dest + solution + src ) );
     gulp.src( publicFolder + files )
-      .pipe( gulp.dest( exercises + options.dest + solution + publicFolder ) );
+        .pipe( gulp.dest( exercises + options.dest + solution + publicFolder ) );
   }
 } );
 
 gulp.task( 'clean-solution', () => {
   return del( [ exercises + options.dest + solution + src,
-    exercises + options.dest + solution + publicFolder ] );
+    exercises + options.dest + solution + publicFolder
+  ] );
 } );
 
 gulp.task( 'clean-begin', () => {
   return del( [ exercises + options.dest + begin + src,
-    exercises + options.dest + begin + publicFolder ] );
+    exercises + options.dest + begin + publicFolder
+  ] );
 } );
 
 gulp.task( 'clean-src', () => {
@@ -112,6 +114,6 @@ gulp.task( 'swap', function() {
   if ( options.src && options.dest && options.ex ) {
     let base = `${exercises}${options.ex}/`;
     gulp.src( base + options.src + '/**/*', { base: base + options.src } )
-      .pipe( gulp.dest( base + options.dest ) );
+        .pipe( gulp.dest( base + options.dest ) );
   }
 } );

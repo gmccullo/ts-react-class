@@ -1,8 +1,8 @@
 # Exercise 9 Instructions
 ## Objectives
-1) Load a list of Payees 
-2) Use state to track the currently displayed Payee
-3) Use event handlers to browse through the set of Payees
+1) Load a list of Payees   
+2) Use state to track the currently displayed Payee  
+3) Use event handlers to browse through the set of Payees  
 
 ### Load a list of Payees
 We need to load a list of Payees from `payeesDAO`. So we have converted `PayeeDetail`

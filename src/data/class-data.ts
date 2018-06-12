@@ -10,7 +10,7 @@ import HasId from './HasId';
 interface Dao<T extends HasId> {
   get: (id: string | number) => T;
   size: () => number;
-  list: (criteria: object) => T[];
+  list: (criteria?: object) => T[];
 }
 
 function daoFactory<T extends HasId>( daoName: string ): Dao<T> {

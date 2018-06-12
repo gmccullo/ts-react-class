@@ -32,6 +32,7 @@ src/index.tsx
 public/images
 public/instructions.css
 **/public/instructions.html
+**/public/instructions*.html
 
 __snapshots__
 src/tests
