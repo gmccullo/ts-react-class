@@ -4,209 +4,208 @@ import Payee from './Payee';
 import Person from './Person';
 import Transaction from './Transaction';
 
-
-const accounts: Array<Account> = [
-    {
+const accounts: Account[] = [
+  {
+    id: '1',
+    personId: '201',
+    accountTypeId: '1',
+    startingBalance: 1000,
+    person: {
+      firstName: 'Jenny',
+      lastName: 'Sparks',
+      gender: 'female',
+      dateOfBirth: '1995-01-01',
+      id: '201',
+      address: {
+        street: '47 Kuhlman Place',
+        city: 'New Queensborough',
+        state: 'NV',
+        zip: '90498-1073'
+      }
+    },
+    accountType: {
       id: '1',
-      personId: '201',
-      accountTypeId: '1',
-      startingBalance: 1000,
-      person: {
-        firstName: 'Jenny',
-        lastName: 'Sparks',
-        gender: 'female',
-        dateOfBirth: '1995-01-01',
-        id: '201',
-        address: {
-          street: '47 Kuhlman Place',
-          city: 'New Queensborough',
-          state: 'NV',
-          zip: '90498-1073'
-        }
-      },
-      accountType: {
-        id: '1',
-        accountTypeName: 'Checking',
-        interestRate: 0
-      },
-      accountName: 'Checking'
+      accountTypeName: 'Checking',
+      interestRate: 0
     },
-    {
+    accountName: 'Checking'
+  },
+  {
+    id: '2',
+    personId: '201',
+    accountTypeId: '2',
+    startingBalance: 10000,
+    person: {
+      firstName: 'Jenny',
+      lastName: 'Sparks',
+      gender: 'female',
+      dateOfBirth: '1995-01-01',
+      id: '201',
+      address: {
+        street: '47 Kuhlman Place',
+        city: 'New Queensborough',
+        state: 'NV',
+        zip: '90498-1073'
+      }
+    },
+    accountType: {
       id: '2',
-      personId: '201',
-      accountTypeId: '2',
-      startingBalance: 10000,
-      person: {
-        firstName: 'Jenny',
-        lastName: 'Sparks',
-        gender: 'female',
-        dateOfBirth: '1995-01-01',
-        id: '201',
-        address: {
-          street: '47 Kuhlman Place',
-          city: 'New Queensborough',
-          state: 'NV',
-          zip: '90498-1073'
-        }
-      },
-      accountType: {
-        id: '2',
-        accountTypeName: 'Savings',
-        interestRate: 0.02
-      },
-      accountName: 'Savings'
+      accountTypeName: 'Savings',
+      interestRate: 0.02
     },
-    {
-      id: '3',
-      personId: '202',
-      accountTypeId: '1',
-      startingBalance: 500,
-      person: {
-        firstName: 'Lucas',
-        lastName: 'Trent',
-        gender: 'male',
-        dateOfBirth: '1983-02-12',
-        id: '202',
-        address: {
-          street: '8966 Telly Tunnel',
-          city: 'Rickashire',
-          state: 'OR',
-          zip: '90822-8587'
-        }
-      },
-      accountType: {
-        id: '1',
-        accountTypeName: 'Checking',
-        interestRate: 0
-      },
-      accountName: 'Checking'
+    accountName: 'Savings'
+  },
+  {
+    id: '3',
+    personId: '202',
+    accountTypeId: '1',
+    startingBalance: 500,
+    person: {
+      firstName: 'Lucas',
+      lastName: 'Trent',
+      gender: 'male',
+      dateOfBirth: '1983-02-12',
+      id: '202',
+      address: {
+        street: '8966 Telly Tunnel',
+        city: 'Rickashire',
+        state: 'OR',
+        zip: '90822-8587'
+      }
     },
-    {
-      id: '4',
-      personId: '202',
-      accountTypeId: '2',
-      startingBalance: 100,
-      person: {
-        firstName: 'Lucas',
-        lastName: 'Trent',
-        gender: 'male',
-        dateOfBirth: '1983-02-12',
-        id: '202',
-        address: {
-          street: '8966 Telly Tunnel',
-          city: 'Rickashire',
-          state: 'OR',
-          zip: '90822-8587'
-        }
-      },
-      accountType: {
-        id: '2',
-        accountTypeName: 'Savings',
-        interestRate: 0.02
-      },
-      accountName: 'Savings'
-    },
-    {
-      id: '5',
-      personId: '203',
-      accountTypeId: '1',
-      startingBalance: 865,
-      person: {
-        firstName: 'Jack',
-        lastName: 'Hawksmoor',
-        gender: 'male',
-        dateOfBirth: '1974-03-26',
-        id: '203',
-        address: {
-          street: '86853 Donnelly Circle',
-          city: 'Annester',
-          state: 'IA',
-          zip: '42783'
-        }
-      },
-      accountType: {
-        id: '1',
-        accountTypeName: 'Checking',
-        interestRate: 0
-      },
-      accountName: 'Checking'
-    }
-  ];
-const categories: Array<Category> = [
-    {
+    accountType: {
       id: '1',
-      categoryName: 'Salary',
-      categoryType: 'income'
+      accountTypeName: 'Checking',
+      interestRate: 0
     },
-    {
+    accountName: 'Checking'
+  },
+  {
+    id: '4',
+    personId: '202',
+    accountTypeId: '2',
+    startingBalance: 100,
+    person: {
+      firstName: 'Lucas',
+      lastName: 'Trent',
+      gender: 'male',
+      dateOfBirth: '1983-02-12',
+      id: '202',
+      address: {
+        street: '8966 Telly Tunnel',
+        city: 'Rickashire',
+        state: 'OR',
+        zip: '90822-8587'
+      }
+    },
+    accountType: {
       id: '2',
-      categoryName: 'Other income',
-      categoryType: 'income'
+      accountTypeName: 'Savings',
+      interestRate: 0.02
     },
-    {
-      id: '3',
-      categoryName: 'Interest',
-      categoryType: 'income'
+    accountName: 'Savings'
+  },
+  {
+    id: '5',
+    personId: '203',
+    accountTypeId: '1',
+    startingBalance: 865,
+    person: {
+      firstName: 'Jack',
+      lastName: 'Hawksmoor',
+      gender: 'male',
+      dateOfBirth: '1974-03-26',
+      id: '203',
+      address: {
+        street: '86853 Donnelly Circle',
+        city: 'Annester',
+        state: 'IA',
+        zip: '42783'
+      }
     },
-    {
-      id: '101',
-      categoryName: 'Clothing',
-      categoryType: 'expense'
+    accountType: {
+      id: '1',
+      accountTypeName: 'Checking',
+      interestRate: 0
     },
-    {
+    accountName: 'Checking'
+  }
+];
+const categories: Category[] = [
+  {
+    id: '1',
+    categoryName: 'Salary',
+    categoryType: 'income'
+  },
+  {
+    id: '2',
+    categoryName: 'Other income',
+    categoryType: 'income'
+  },
+  {
+    id: '3',
+    categoryName: 'Interest',
+    categoryType: 'income'
+  },
+  {
+    id: '101',
+    categoryName: 'Clothing',
+    categoryType: 'expense'
+  },
+  {
+    id: '102',
+    categoryName: 'Housing',
+    categoryType: 'expense'
+  },
+  {
+    id: '103',
+    categoryName: 'Food',
+    categoryType: 'expense'
+  },
+  {
+    id: '104',
+    categoryName: 'Entertainment',
+    categoryType: 'expense'
+  },
+  {
+    id: '105',
+    categoryName: 'Medical',
+    categoryType: 'expense'
+  },
+  {
+    id: '106',
+    categoryName: 'Utilities',
+    categoryType: 'expense'
+  },
+  {
+    id: '107',
+    categoryName: 'Transportation',
+    categoryType: 'expense'
+  },
+  {
+    id: '108',
+    categoryName: 'Cash',
+    categoryType: 'expense'
+  }
+];
+const payees: Payee[] = [
+  {
+    id: '1',
+    payeeName: 'DCH Mortgages',
+    address: '1285 Rezlog Plaza',
+    city: 'Powhatan',
+    state: 'RI',
+    zip: '02212',
+    categoryId: '102',
+    image: null,
+    motto: null,
+    active: true,
+    category: {
       id: '102',
       categoryName: 'Housing',
       categoryType: 'expense'
-    },
-    {
-      id: '103',
-      categoryName: 'Food',
-      categoryType: 'expense'
-    },
-    {
-      id: '104',
-      categoryName: 'Entertainment',
-      categoryType: 'expense'
-    },
-    {
-      id: '105',
-      categoryName: 'Medical',
-      categoryType: 'expense'
-    },
-    {
-      id: '106',
-      categoryName: 'Utilities',
-      categoryType: 'expense'
-    },
-    {
-      id: '107',
-      categoryName: 'Transportation',
-      categoryType: 'expense'
-    },
-    {
-      id: '108',
-      categoryName: 'Cash',
-      categoryType: 'expense'
     }
-  ];
-const payees: Array<Payee> = [
-    {
-      id: '1',
-      payeeName: 'DCH Mortgages',
-      address: '1285 Rezlog Plaza',
-      city: 'Powhatan',
-      state: 'RI',
-      zip: '02212',
-      categoryId: '102',
-      image: null,
-      motto: null,
-      active: true,
-      category: {
-        id: '102',
-        categoryName: 'Housing',
-        categoryType: 'expense'
-      }
-    },
+  },
   {
     id: '2',
     payeeName: 'Ill Communication Telephones',
@@ -627,8 +626,172 @@ const payees: Array<Payee> = [
     }
   }
 ];
-const people: Array<Person> = [
-    {
+const people: Person[] = [
+  {
+    firstName: 'Jenny',
+    lastName: 'Sparks',
+    gender: 'female',
+    dateOfBirth: '1995-01-01',
+    id: '201',
+    address: {
+      street: '47 Kuhlman Place',
+      city: 'New Queensborough',
+      state: 'NV',
+      zip: '90498-1073'
+    }
+  },
+  {
+    firstName: 'Lucas',
+    lastName: 'Trent',
+    gender: 'male',
+    dateOfBirth: '1983-02-12',
+    id: '202',
+    address: {
+      street: '8966 Telly Tunnel',
+      city: 'Rickashire',
+      state: 'OR',
+      zip: '90822-8587'
+    }
+  },
+  {
+    firstName: 'Jack',
+    lastName: 'Hawksmoor',
+    gender: 'male',
+    dateOfBirth: '1974-03-26',
+    id: '203',
+    address: {
+      street: '86853 Donnelly Circle',
+      city: 'Annester',
+      state: 'IA',
+      zip: '42783'
+    }
+  },
+  {
+    firstName: 'Jeroen',
+    lastName: 'Thornedike',
+    gender: 'male',
+    dateOfBirth: '1984-04-07',
+    id: '204',
+    address: {
+      street: '851 Matt Station',
+      city: 'Ovorp',
+      state: 'UT',
+      zip: '69781-5546'
+    }
+  },
+  {
+    firstName: 'Angela',
+    lastName: 'Cortez',
+    gender: 'female',
+    dateOfBirth: '1979-05-15',
+    id: '205',
+    address: {
+      street: '0546 Baumbach Street',
+      city: 'Garrison',
+      state: 'AK',
+      zip: '27323-2569'
+    }
+  },
+  {
+    firstName: 'Shen',
+    lastName: 'Li-Min',
+    gender: 'female',
+    dateOfBirth: '1990-06-30',
+    id: '206',
+    address: {
+      street: '293 Muller Street',
+      city: 'Leffler',
+      state: 'VT',
+      zip: '33861-2679'
+    }
+  },
+  {
+    firstName: 'Spider',
+    lastName: 'Jerusalem',
+    gender: 'male',
+    dateOfBirth: '1977-07-05',
+    id: '207',
+    address: {
+      street: '282 Queenie Drives',
+      city: 'Hesselview',
+      state: 'AL',
+      zip: '04221'
+    }
+  },
+  {
+    firstName: 'Jakita',
+    lastName: 'Wagner',
+    gender: 'female',
+    dateOfBirth: '1988-08-12',
+    id: '208',
+    address: {
+      street: '46892 Virgil Hill',
+      city: 'Quantico',
+      state: 'VA',
+      zip: '68699'
+    }
+  },
+  {
+    firstName: 'Elijah',
+    lastName: 'Snow',
+    gender: 'male',
+    dateOfBirth: '1968-09-19',
+    id: '209',
+    address: {
+      street: '558 Jalyn Meadow',
+      city: 'Roscoe',
+      state: 'AR',
+      zip: '50499-5983'
+    }
+  },
+  {
+    firstName: 'Ambrose',
+    lastName: 'Chase',
+    gender: 'male',
+    dateOfBirth: '1993-10-22',
+    id: '210',
+    address: {
+      street: '4767 Ibrahim Overpass',
+      city: 'Portsmouth',
+      state: 'RI',
+      zip: '24622'
+    }
+  }
+];
+
+const tx: Transaction[] = [
+  {
+    id: '1',
+    payeeId: '1',
+    personId: '201',
+    categoryId: '102',
+    category: {
+      id: '102',
+      categoryName: 'Housing',
+      categoryType: 'expense'
+    },
+    accountId: '1',
+    txType: '2',
+    txDate: '2016-06-01T04:00:00.000Z',
+    amount: -1600,
+    payee: {
+      id: '1',
+      payeeName: 'DCH Mortgages',
+      address: '1285 Rezlog Plaza',
+      city: 'Powhatan',
+      state: 'RI',
+      zip: '02212',
+      categoryId: '102',
+      image: null,
+      motto: null,
+      active: true,
+      category: {
+        id: '102',
+        categoryName: 'Housing',
+        categoryType: 'expense'
+      }
+    },
+    person: {
       firstName: 'Jenny',
       lastName: 'Sparks',
       gender: 'female',
@@ -641,157 +804,11 @@ const people: Array<Person> = [
         zip: '90498-1073'
       }
     },
-    {
-      firstName: 'Lucas',
-      lastName: 'Trent',
-      gender: 'male',
-      dateOfBirth: '1983-02-12',
-      id: '202',
-      address: {
-        street: '8966 Telly Tunnel',
-        city: 'Rickashire',
-        state: 'OR',
-        zip: '90822-8587'
-      }
-    },
-    {
-      firstName: 'Jack',
-      lastName: 'Hawksmoor',
-      gender: 'male',
-      dateOfBirth: '1974-03-26',
-      id: '203',
-      address: {
-        street: '86853 Donnelly Circle',
-        city: 'Annester',
-        state: 'IA',
-        zip: '42783'
-      }
-    },
-    {
-      firstName: 'Jeroen',
-      lastName: 'Thornedike',
-      gender: 'male',
-      dateOfBirth: '1984-04-07',
-      id: '204',
-      address: {
-        street: '851 Matt Station',
-        city: 'Ovorp',
-        state: 'UT',
-        zip: '69781-5546'
-      }
-    },
-    {
-      firstName: 'Angela',
-      lastName: 'Cortez',
-      gender: 'female',
-      dateOfBirth: '1979-05-15',
-      id: '205',
-      address: {
-        street: '0546 Baumbach Street',
-        city: 'Garrison',
-        state: 'AK',
-        zip: '27323-2569'
-      }
-    },
-    {
-      firstName: 'Shen',
-      lastName: 'Li-Min',
-      gender: 'female',
-      dateOfBirth: '1990-06-30',
-      id: '206',
-      address: {
-        street: '293 Muller Street',
-        city: 'Leffler',
-        state: 'VT',
-        zip: '33861-2679'
-      }
-    },
-    {
-      firstName: 'Spider',
-      lastName: 'Jerusalem',
-      gender: 'male',
-      dateOfBirth: '1977-07-05',
-      id: '207',
-      address: {
-        street: '282 Queenie Drives',
-        city: 'Hesselview',
-        state: 'AL',
-        zip: '04221'
-      }
-    },
-    {
-      firstName: 'Jakita',
-      lastName: 'Wagner',
-      gender: 'female',
-      dateOfBirth: '1988-08-12',
-      id: '208',
-      address: {
-        street: '46892 Virgil Hill',
-        city: 'Quantico',
-        state: 'VA',
-        zip: '68699'
-      }
-    },
-    {
-      firstName: 'Elijah',
-      lastName: 'Snow',
-      gender: 'male',
-      dateOfBirth: '1968-09-19',
-      id: '209',
-      address: {
-        street: '558 Jalyn Meadow',
-        city: 'Roscoe',
-        state: 'AR',
-        zip: '50499-5983'
-      }
-    },
-    {
-      firstName: 'Ambrose',
-      lastName: 'Chase',
-      gender: 'male',
-      dateOfBirth: '1993-10-22',
-      id: '210',
-      address: {
-        street: '4767 Ibrahim Overpass',
-        city: 'Portsmouth',
-        state: 'RI',
-        zip: '24622'
-      }
-    }
-  ];
-
-const tx: Array<Transaction> = [
-    {
+    account: {
       id: '1',
-      payeeId: '1',
       personId: '201',
-      categoryId: '102',
-      category: {
-        id: '102',
-        categoryName: 'Housing',
-        categoryType: 'expense'
-      },
-      accountId: '1',
-      txType: '2',
-      txDate: '2016-06-01T04:00:00.000Z',
-      amount: -1600,
-      payee: {
-        id: '1',
-        payeeName: 'DCH Mortgages',
-        address: '1285 Rezlog Plaza',
-        city: 'Powhatan',
-        state: 'RI',
-        zip: '02212',
-        categoryId: '102',
-        image: null,
-        motto: null,
-        active: true,
-        category: {
-          id: '102',
-          categoryName: 'Housing',
-          categoryType: 'expense'
-        }
-      },
+      accountTypeId: '1',
+      startingBalance: 1000,
       person: {
         firstName: 'Jenny',
         lastName: 'Sparks',
@@ -805,33 +822,15 @@ const tx: Array<Transaction> = [
           zip: '90498-1073'
         }
       },
-      account: {
+      accountType: {
         id: '1',
-        personId: '201',
-        accountTypeId: '1',
-        startingBalance: 1000,
-        person: {
-          firstName: 'Jenny',
-          lastName: 'Sparks',
-          gender: 'female',
-          dateOfBirth: '1995-01-01',
-          id: '201',
-          address: {
-            street: '47 Kuhlman Place',
-            city: 'New Queensborough',
-            state: 'NV',
-            zip: '90498-1073'
-          }
-        },
-        accountType: {
-          id: '1',
-          accountTypeName: 'Checking',
-          interestRate: 0
-        },
-        accountName: 'Checking'
+        accountTypeName: 'Checking',
+        interestRate: 0
       },
-      txTypeName: 'Debit'
+      accountName: 'Checking'
     },
+    txTypeName: 'Debit'
+  },
   {
     id: '2',
     payeeId: '2',
