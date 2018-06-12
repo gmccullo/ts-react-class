@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import * as React from 'react';
 
 class AppClass extends Component {
   render() {

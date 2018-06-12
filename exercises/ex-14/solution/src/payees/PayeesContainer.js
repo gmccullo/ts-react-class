@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import * as React from 'react';
 import _sortBy from 'lodash/sortBy';
 
 import {payeesDAO} from '../data/class-data';

@@ -1,8 +1,13 @@
 import * as React from 'react';
-import renderer from 'react-test-renderer';
+import * as renderer from 'react-test-renderer';
 import {shallow} from 'enzyme';
 import {payeesDAO} from '../../data/class-data';
 import PayeeDetail from '../PayeeDetail';
+
+import * as Enzyme from 'enzyme';
+import * as Adapter from 'enzyme-adapter-react-16';
+
+Enzyme.configure( { adapter: new Adapter() } );
 
 describe( 'PayeeDetail snapshots', () => {
 } );

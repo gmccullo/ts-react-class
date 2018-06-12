@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import * as React from 'react';
 
 import './css/local.css';
 
 import {payeesDAO} from './data/class-data';
 import PayeeDetail from './payees/PayeeDetail';
 
-export default class App extends Component {
+export default class App extends React.Component {
   constructor(props) {
     super(props);
 

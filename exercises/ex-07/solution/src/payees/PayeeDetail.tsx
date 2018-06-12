@@ -1,6 +1,11 @@
 import * as React from 'react';
+import Payee from '../data/Payee';
 
-const PayeeDetail = ( {payee} ) => {
+export interface PayeeDetailProps {
+  payee: Payee;
+}
+
+const PayeeDetail: React.SFC<PayeeDetailProps> = ( {payee}: PayeeDetailProps ) => {
 
   return (
     <div className="panel panel-primary">

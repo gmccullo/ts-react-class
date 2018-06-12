@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import * as React from 'react';
 import PayeeRow from './PayeeRow';
 import {setSortField, setPayee, payeesFetchData} from './payee-actions';
 import {connect} from 'react-redux';

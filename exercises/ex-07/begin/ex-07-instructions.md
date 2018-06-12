@@ -1,10 +1,10 @@
 # Exercise 7 Instructions 
 ## Objectives
-1) Build a PayeeDetail component
-2) Get a Payee (payee #23 for instance)
-3) Pass it into PayeeDetail
-4) Render out its content
-5) Write tests
+1) Build a PayeeDetail component  
+2) Get a Payee (payee #23 for instance)  
+3) Pass it into PayeeDetail  
+4) Render out its content  
+5) Write tests  
 
 ### Build a PayeeDetail component
 Open `payees/PayeeDetail.js`.

@@ -1,32 +1,36 @@
 import * as _ from 'lodash';
-import * as classData from './class-data-mapped';
+import * as data from './class-data-mapped';
+import Account from './Account';
+import Payee from './Payee';
+import Person from './Person';
+import Category from './Category';
+import Transaction from './Transaction';
+import HasId from './HasId';
 
-interface HasId {
-  id: number | string;
-
-  [ key: string ]: any;
+interface Dao<T extends HasId> {
+  get: (id: string | number) => T;
+  size: () => number;
+  list: (criteria: object) => Array<T>;
 }
 
-const daoFactory = ( daoName: string ) => {
+function daoFactory<T extends HasId>( daoName: string ): Dao<T> {
   return {
-    get: ( id: string | number ) => {
-      return classData[ daoName ].find( ( item: HasId ) => item.id === ( id + '' ) );
+    get: ( id: string | number ): T => {
+      return data[ daoName ].find( ( item: T ) => item.id === ( id + '' ) );
     },
 
-    size: () => classData[ daoName ].length,
+    size: () => data[ daoName ].length,
 
     list: ( criteria: object ) => {
-      return _.filter( classData[ daoName ], criteria );
+      return _.filter( data[ daoName ], criteria );
     }
   };
-};
+}
 
-const payeesDAO     = daoFactory( 'payees' ),
-      accountsDAO   = daoFactory( 'accounts' ),
-      peopleDAO     = daoFactory( 'people' ),
-      categoriesDAO = daoFactory( 'categories' ),
-      txDAO         = daoFactory( 'tx' ),
-      // tslint:disable-next-line
-      staticData    = classData[ 'staticData' ];
+const payeesDAO     = daoFactory<Payee>( 'payees' ),
+      accountsDAO   = daoFactory<Account>( 'accounts' ),
+      peopleDAO     = daoFactory<Person>( 'people' ),
+      categoriesDAO = daoFactory<Category>( 'categories' ),
+      txDAO         = daoFactory<Transaction>( 'tx' );
 
-export { categoriesDAO, staticData, accountsDAO, peopleDAO, payeesDAO, txDAO };
+export { categoriesDAO, accountsDAO, peopleDAO, payeesDAO, txDAO, Dao };

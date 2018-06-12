@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import * as React from 'react';
 import {createStore, applyMiddleware, combineReducers} from 'redux';
 import thunk from 'redux-thunk';
 import {Provider} from 'react-redux';
@@ -16,7 +16,7 @@ const localRouterMiddleware = routerMiddleware( history );
 
 const store = createStore( payeeApp, applyMiddleware( thunk ) );
 
-export default class App extends Component {
+export default class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
