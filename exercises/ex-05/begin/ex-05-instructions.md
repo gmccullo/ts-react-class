@@ -1,13 +1,13 @@
 # Exercise 5 Instructions
 ## Objectives
-1) Create a test spec for CustomHeader that uses snapshots
-2) Create a test spec for CustomFooter that uses snapshots
-3) Experiment with changes to the two components
+1) Create a test spec for CustomHeader that uses snapshots  
+2) Create a test spec for CustomFooter that uses snapshots  
+3) Experiment with changes to the two components  
 
 ### Create a test spec for CustomHeader that uses snapshots
 Open `src/tests/CustomHeader.spec.js`. Add code to generate a snapshot 
 from a standard rendering of `<CustomHeader>`. Remember that `<CustomHeader>` is
-intended to wrap around and render content.
+intended to wrap around and render content.  
 
 ### Create a test spec for CustomFooter that uses snapshots
 Open `src/tests/CustomFooter.spec.js`. Add code to generate a snapshot 

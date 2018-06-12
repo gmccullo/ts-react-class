@@ -9,6 +9,9 @@ We need to load a list of Payees from `payeesDAO`. So we have converted `PayeeDe
 to a class-based component for this exercise. (Do not worry, we will switch it 
 back soon enough.)  
 
+You will have to update the generics for PayeeDetail. We are using both props and
+state here (though they're probably the same type, aren't they?)
+
 In the `constructor`, use `payeesDAO` to retrieve a list of Payees.  
 
 ### Use state to track the currently displayed Payee

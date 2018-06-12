@@ -6,7 +6,7 @@ import LoggedIn from './LoggedIn';
 import NotLoggedIn from './NotLoggedIn';
 
 const App = () => {
-  let company = {
+  const company = {
     name   : 'Express Scripts',
     address: '100 Forest Lane',
     city   : 'Franklin Lakes',
@@ -23,7 +23,7 @@ const App = () => {
     loginComponent = <NotLoggedIn/>;
   }
 
-  let today = new Date();
+  const today = new Date();
   return (
     <section>
       <CustomHeader>

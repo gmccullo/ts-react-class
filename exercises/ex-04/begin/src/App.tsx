@@ -3,7 +3,7 @@ import CustomHeader from './CustomHeader';
 import CustomFooter from './CustomFooter';
 
 const App = () => {
-  let company = {
+  const company = {
     name   : 'Express Scripts',
     address: '100 Forest Lane',
     city   : 'Franklin Lakes',

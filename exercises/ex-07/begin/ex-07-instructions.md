@@ -7,21 +7,23 @@
 5) Write tests  
 
 ### Build a PayeeDetail component
-Open `payees/PayeeDetail.js`.
+Open `payees/PayeeDetail.tsx`.
 
 Create a component that does the following:
 * Can be a class or a function (but probably a function)
 * Expects a payee as a passed property
+  * You can use the Payee type, available in the **data** folder
+  * Don't forget to create an interface for your props
 * Renders the payee into a [Bootstrap panel](http://getbootstrap.com/components/#panels)
   * You can use the `panel-primary` class to style the panel
   * Use a `ul.list-group` with `li.list-group-item` elements to render the 
     contents of the Payee
 
 ### Get a Payee
-Open `App.js`
+Open `App.tsx`
 
 Note that `class-data` is already included, so you have access to
-`payeesDAO`.
+`payeesDAO`. And Payee has been included as a type here as well. 
 
 In the `constructor`, use `payeesDAO.get()` to retrieve a Payee and store 
 it on an instance variable (i.e., assign it to `this.payee`).
@@ -41,11 +43,21 @@ It should look like this:
 
 ### Write tests
 
-Open `payees/tests/PayeeDetail.spec.js`.  
+Open `payees/tests/PayeeDetail.spec.tsx`.  
 Some of the file has been created for you.  
 Fill in the tests required, specifically:
 
-* A snapshot test.
+* Uncomment the line that imports `PayeeDetail`
+* Configure Enzyme correctly:  
+
+```typescript
+import * as Enzyme from 'enzyme';
+import * as Adapter from 'enzyme-adapter-react-16';
+
+Enzyme.configure( { adapter: new Adapter() } );
+```
+
+* Create a snapshot test.
 * Test the content of `PayeeDetail` to see if it has rendered a Payee correctly.
 * Test the `props` of `PayeeDetail` to see if the reference passed in is the 
   same as the one received.

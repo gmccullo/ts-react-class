@@ -17,6 +17,8 @@ In `<CustomHeader>`, pull the content between the `<section>` tags out of Custom
 move them to be between `<CustomHeader>` and `</CustomHeader>` in `<App>`
 
 Replace the content in `<CustomHeader>` with a call to `props.children`.
+For the moment, you can change the type of `props` to `any`. If you do not, you 
+will get type errors. 
 
 Feel free to experiment with other content. The point is that, whatever you put under 
 `<CustomHeader>` is styled appropriately.
@@ -37,7 +39,8 @@ Open `ThemeViewer.js`. Notice that the HTML has been defined for you.
   * For buttons: btn and btn-danger 
   * For labels: label and label-warning
 
-4) Add code which looks for `props.theme` and chooses the theme appropriately
+4) Add code which looks for `props.theme` and chooses the theme appropriately. Assume 
+that you will need to create an interface for the props type. 
 
 5) Add classes to the buttons and labels using the classes set out in 3) above
 

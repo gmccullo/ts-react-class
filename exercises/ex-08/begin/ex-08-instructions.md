@@ -17,6 +17,9 @@ as well.
 ### Attach event handlers to their respective buttons
 Write two event handlers, `handlePrevious` and `handleNext` in the component.  
 (You can use either arrow or classical functions.)  
+What is the proper type for the event in these event handlers? Here's a hint:
+these are `MouseEvents` in `React` that we are handling which originate from
+an `HtmlButtonElement`. 
 The event handlers can log to the console that they fired.
 Connect the event handlers to the `onClick` event on each button. 
 

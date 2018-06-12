@@ -4,7 +4,7 @@ import CustomFooter from './CustomFooter';
 import ThemeViewer from './ThemeViewer';
 
 const App = () => {
-  let company = {
+  const company = {
     name   : 'Express Scripts',
     address: '100 Forest Lane',
     city   : 'Franklin Lakes',

@@ -4,7 +4,7 @@ import * as renderer from 'react-test-renderer';
 import CustomFooter from '../CustomFooter';
 
 it( 'checks out against a snapshot', () => {
-  let company = {
+  const company = {
     name: 'Frobisher & Spalding',
     address: '1100 Avenue A',
     city: 'New York',
