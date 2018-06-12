@@ -3,9 +3,16 @@ import * as React from 'react';
 import {payeesDAO} from '../data/class-data';
 import PayeeDetail from './PayeeDetail';
 import BrowserButtons from '../BrowserButtons';
+import Payee from '../data/Payee';
 
-class PayeesContainer extends Component {
-  constructor( props ) {
+export interface PayeeContainerState {
+  payee: Payee;
+}
+
+class PayeesContainer extends React.Component<any, PayeeContainerState> {
+  payeeList: Payee[];
+
+  constructor( props: any ) {
     super( props );
 
     this.payeeList = payeesDAO.list();
@@ -13,12 +20,10 @@ class PayeesContainer extends Component {
     this.state = {
       payee: this.payeeList[ 0 ]
     };
-
-    this.handleNextPrev = this.handleNextPrev.bind( this );
   }
 
-  handleNextPrev( direction ) {
-    let pos = this.payeeList.indexOf( this.state.payee );
+  handleNextPrev = ( direction: string ) => {
+    const pos = this.payeeList.indexOf( this.state.payee );
     let next = 0;
 
     if ( direction === 'next' ) {
@@ -30,7 +35,7 @@ class PayeesContainer extends Component {
     this.setState( {
       payee: this.payeeList[ next ]
     } );
-  }
+  };
 
   render() {
     return (

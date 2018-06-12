@@ -1,8 +1,8 @@
 # Exercise 10 Instructions
 ## Objectives
-1) Extract some code into the `PayeesContainer`, `PayeeDetail`, and `BrowserButtons` components
-2) Add custom events to `BrowserButtons`
-3) Refactor code to handle `BrowserButtons`' custom events
+1) Extract some code into the `PayeesContainer`, `PayeeDetail`, and `BrowserButtons` components  
+2) Add custom events to `BrowserButtons`  
+3) Refactor code to handle `BrowserButtons`' custom events  
 
 ### Extract code into multiple components
 Currently, all the code is in `PayeeDetail`, which is untenable.  
@@ -17,8 +17,9 @@ Start in `PayeeDetail`. Grab the `div.btn-group` element and move it into
 
 ### Add custom events to `BrowserButtons`
 
-Move over to `BrowserButtons`. Attach `onClick` event handlers to the buttons, which invoke
-the `onNextPrev` property passed into `BrowserButtons`. The invocation should pass
+Move over to `BrowserButtons`. Define an interface for its inputs. It will be passed
+an `onNextPrev` property, which is an event handling function. Attach `onNextPrev` 
+to the buttons, via onClick event handlers. The invocation should pass
 back the direction of the button ('next' or 'previous'). You may have to use a slightly
 different event binding syntax here. 
 

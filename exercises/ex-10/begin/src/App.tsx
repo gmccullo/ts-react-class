@@ -2,8 +2,8 @@ import * as React from 'react';
 
 import './css/local.css';
 
-import Navbar from './Navbar';
 import PayeesContainer from './payees/PayeesContainer';
+import Navbar from './Navbar';
 
 export default class App extends React.Component {
   render() {
